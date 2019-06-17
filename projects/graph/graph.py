@@ -58,7 +58,28 @@ class Graph:
         Print each vertex in depth-first order
         beginning from starting_vertex.
         """
-        pass  # TODO
+        # create an empty stack and push the starting vertex ID
+        s = Stack()
+        s.push(starting_vertex)
+
+        # create a Set to store the visited vertices
+        visited = set()
+
+        # while the stack is not empty
+        while s.size() > 0:
+            # pop the first vertex
+            v = s.pop()
+
+            # if the current vertex has not been visited
+            if v not in visited:
+                # mark as visited, print v, and add v to visited set
+                print(v)
+                visited.add(v)
+
+                # then add all of its neighbors onto the stack
+                for next_vertex in self.vertices[v]:
+                    s.push(next_vertex)
+
     def dft_recursive(self, starting_vertex):
         """
         Print each vertex in depth-first order
@@ -66,6 +87,7 @@ class Graph:
         This should be done using recursion.
         """
         pass  # TODO
+
     def bfs(self, starting_vertex, destination_vertex):
         """
         Return a list containing the shortest path from
@@ -73,6 +95,7 @@ class Graph:
         breath-first order.
         """
         pass  # TODO
+
     def dfs(self, starting_vertex, destination_vertex):
         """
         Return a list containing a path from
