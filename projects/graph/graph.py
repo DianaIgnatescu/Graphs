@@ -80,13 +80,18 @@ class Graph:
                 for next_vertex in self.vertices[v]:
                     s.push(next_vertex)
 
-    def dft_recursive(self, starting_vertex):
+    def dft_recursive(self, starting_vertex, visited=set()):
         """
         Print each vertex in depth-first order
         beginning from starting_vertex.
         This should be done using recursion.
         """
-        pass  # TODO
+
+        visited.add(starting_vertex)
+
+        for next_vertex in self.vertices[starting_vertex]:
+            if next_vertex not in visited:
+                self.dft_recursive(next_vertex, visited)
 
     def bfs(self, starting_vertex, destination_vertex):
         """
