@@ -88,6 +88,7 @@ class Graph:
         """
 
         visited.add(starting_vertex)
+        print(starting_vertex)
 
         for next_vertex in self.vertices[starting_vertex]:
             if next_vertex not in visited:
